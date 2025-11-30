@@ -1,0 +1,491 @@
+ /* GLOBAL VARIABLES AND BASE STYLES */
+
+
+:root {
+    /* Color Palette */
+    --dark-blue: #071629;
+    --pink-accent: #FF6565;
+    --light-text: #FFFFFF;
+    --text-color-faded: rgba(255, 255, 255, 0.5);
+    --purple-quote: #9747FF;
+    --star-color-active: var(--pink-accent);
+    --star-color-inactive: #C2C2C2;
+}
+
+body {
+    /* Font integration: Assuming Source Sans Pro is linked in HTML head */
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--dark-blue); /* Default text color for light sections */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+/* Helper class for centering and constraining content width */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+ /* HEADER AND BANNER STYLING */
+
+
+header {
+    /* Apply dark background and banner image */
+    background-color: var(--dark-blue);
+    background-image: url('./images/full_background.jpg'); /* Placeholder image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--light-text);
+    padding-bottom: 80px; /* Space below avatar row */
+}
+
+/* Navigation Bar Layout (Flexbox for logo/links separation) */
+header nav {
+    /* Use header as the container and define max-width/centering */
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav img {
+    /* Logo styling */
+    height: 40px; 
+    width: auto;
+    background: transparent;
+}
+
+header nav ul {
+    /* Links list formatting (Flexbox for horizontal alignment) */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px;
+}
+
+header nav a {
+    /* Link appearance */
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+header nav a:hover { opacity: 1; }
+
+/* --- Hero Content (First div inside main > section) --- */
+main section:first-child > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 0 50px;
+}
+
+main section:first-child h1 {
+    /* Primary heading style */
+    font-size: 120px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+main section:first-child > div:first-child span {
+    /* Slogan words style */
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 25px; 
+}
+
+main section:first-child button {
+    /* REGISTER button styling */
+    background-color: var(--pink-accent);
+    color: var(--light-text);
+    border: none;
+    border-radius: 22px;
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 40px 0 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+/* --- Avatar Row (Second div inside main > section) --- */
+main section:first-child > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main section:first-child h2 {
+    /* 'Learn from the pros' heading */
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 10px 0 50px;
+}
+
+/* Avatar Cards Container (Flexbox for horizontal distribution) */
+main section:first-child > div:nth-child(2) > div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Individual Avatar Card */
+main section:first-child > div:nth-child(2) > div > div {
+    width: 20%;
+}
+
+main section:first-child img {
+    /* Avatar image styling */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+main section:first-child h3 {
+    /* Name styling */
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 0 0;
+}
+
+main section:first-child p {
+    /* Quote styling */
+    font-size: 14px;
+    color: var(--text-color-faded);
+    margin: 0;
+}
+
+ /* QUOTES SECTION STYLING */
+ 
+
+main section:nth-child(2) {
+    background-color: var(--purple-quote);
+    padding: 80px 0;
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+}
+
+/* Quote container (Flexbox for image and text alignment) */
+main section:nth-child(2) > div {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    align-items: center;
+    gap: 80px;
+}
+
+main section:nth-child(2) img {
+    /* Quote avatar styling */
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+main section:nth-child(2) blockquote {
+    /* Blockquote text styling */
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    padding: 0;
+    border: none;
+}
+
+main section:nth-child(2) h3 {
+    /* Name styling */
+    font-size: 18px;
+    font-weight: 700; 
+    margin: 0;
+}
+
+main section:nth-child(2) p {
+    /* Title styling */
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+
+ /* MOST POPULAR TUTORIALS SECTION STYLING */
+
+main section:nth-child(3) {
+    padding: 80px 0;
+    text-align: center;
+}
+
+main section:nth-child(3) h2 {
+    /* Section heading */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Tutorials Grid (CSS Grid for 4 columns) */
+main section:nth-child(3) > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual Tutorial Card */
+main section:nth-child(3) > div > div {
+    text-align: left;
+}
+
+main section:nth-child(3) > div > div > img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main section:nth-child(3) h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0 5px;
+}
+
+main section:nth-child(3) p {
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+/* Tutorial Author Row (Flexbox) */
+main section:nth-child(3) > div > div > div:nth-child(4) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main section:nth-child(3) > div > div > div:nth-child(4) img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+main section:nth-child(3) h4 {
+    font-size: 14px;
+    color: var(--pink-accent);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Rating Stars and Duration Container (Flexbox for alignment) */
+main section:nth-child(3) > div > div > div:nth-child(5) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Stars Container */
+main section:nth-child(3) > div > div > div:nth-child(5) > div:first-child {
+    display: flex;
+    gap: 2px;
+}
+
+main section:nth-child(3) .fa-star {
+    font-size: 12px;
+    color: var(--star-color-active);
+}
+
+/* Targeting the last star to style it as inactive based on the typical rating design */
+main section:nth-child(3) > div > div > div:nth-child(5) > div:first-child > div:last-child .fa-star {
+    color: var(--star-color-inactive); 
+}
+
+/* Duration */
+main section:nth-child(3) > div > div > p:last-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-blue); 
+    margin: 0;
+}
+
+
+ /* FREE MEMBERSHIP SECTION STYLING */
+ 
+
+main section:nth-child(4) {
+    background-color: var(--dark-blue);
+    color: var(--light-text);
+    padding: 80px 0;
+    text-align: center;
+}
+
+main section:nth-child(4) h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Membership Cards Grid (CSS Grid for 4 columns) */
+main section:nth-child(4) > div:not(:last-child) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+main section:nth-child(4) img {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 20px;
+}
+
+main section:nth-child(4) h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+main section:nth-child(4) p {
+    font-size: 14px;
+    color: var(--text-color-faded);
+    margin: 0;
+}
+
+/* REGISTER button (Reusing the style defined in the header) */
+main section:nth-child(4) button {
+    background-color: var(--pink-accent);
+    color: var(--light-text);
+    border: none;
+    border-radius: 22px;
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+  /* F.A.Q SECTION STYLING */
+
+main section:nth-child(5) {
+    padding: 80px 0;
+    text-align: center;
+}
+
+main section:nth-child(5) h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* FAQ Columns Container (CSS Grid for 2 columns) */
+main section:nth-child(5) > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* FAQ Item Container (Each question/answer pair) */
+main section:nth-child(5) > div > div > div {
+    margin-bottom: 30px;
+}
+
+main section:nth-child(5) h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+main section:nth-child(5) > div > div > div:nth-child(2n) {
+    /* Styling for the answer paragraphs */
+    font-size: 14px;
+    color: #797979; 
+    margin: 0 0 25px 0; /* Add space below the answer */
+}
+
+
+/* FOOTER STYLING */
+
+footer {
+    background-color: var(--dark-blue);
+    color: var(--light-text);
+    padding: 40px 0;
+}
+
+/* Footer Content (Flexbox for logo/socials and copyright alignment) */
+footer section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer section > div {
+    display: flex;
+    align-items: center;
+}
+
+footer section img {
+    height: 30px;
+    width: auto;
+    margin-right: 50px;
+}
+
+/* Social Icons */
+footer section div i {
+    font-size: 24px;
+    margin-right: 20px;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+footer section div i:hover {
+    color: var(--pink-accent);
+}
+
+/* Copyright text */
+footer section p {
+    font-size: 12px;
+    color: var(--text-color-faded);
+    margin: 0;
+}
